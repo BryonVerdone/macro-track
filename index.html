@@ -19,7 +19,10 @@
       <input type="number" id="fatsInput" />
       <button type="" button>Update Macros</button>
     </form>
-    <h2>Total Calories: <span id="totalCalories">0</span></h2>
+    <h2>Protein <span id="proteinDisplay"> 0</span></h2>
+    <h2>Carbs <span id="carbsDisplay"> 0</span></h2>
+    <h2>Fats <span id="fatsDisplay"> 0</span></h2>
+    <h2>Total Calories <span id="totalCalories">0</span></h2>
 
     <h2>Food List</h2>
     <form id="foodForm">
@@ -31,7 +34,7 @@
       <input type="number" id="foodCarbs" />
       <label for="foodFats">Fats (g)</label>
       <input type="number" id="foodFats" />
-      <button type="button">Add Food</button>
+      <button id="btn" type="button">Add Food</button>
     </form>
     <ul id="foodList"></ul>
     <script src="./app.js"></script>
