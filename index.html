@@ -9,14 +9,31 @@
   </head>
   <body>
     <h1>Track your daily macros</h1>
+    <h2>Enter your macro targets for today</h2>
+    <form id="goalsForm">
+      <label for="proteinInput">Protein (g)</label>
+      <input type="number" id="proteinInput" />
+      <label for="carbsInput">Carbs (g)</label>
+      <input type="number" id="carbsInput" />
+      <label for="fatsInput">Fats (g)</label>
+      <input type="number" id="fatsInput" />
+      <button type="" button>Update Macros</button>
+    </form>
+    <h2>Total Calories: <span id="totalCalories">0</span></h2>
 
-    <input id="protein" placeholder="protien" type="number" />
-
-    <input id="carb" placeholder="carbs" type="text" />
-
-    <input id="fat" placeholder="fats" type="text" />
-    <button id="btn">submit</button>
-    <h2 class="calories-display"></h2>
-    <script src="app.js"></script>
+    <h2>Food List</h2>
+    <form id="foodForm">
+      <label for="foodName">Food Name</label>
+      <input type="text" id="foodName" />
+      <label for="foodProtein">Protein (g)</label>
+      <input type="number" id="foodProtein" />
+      <label for="foodCarbs">Carbs (g)</label>
+      <input type="number" id="foodCarbs" />
+      <label for="foodFats">Fats (g)</label>
+      <input type="number" id="foodFats" />
+      <button type="button">Add Food</button>
+    </form>
+    <ul id="foodList"></ul>
+    <script src="./app.js"></script>
   </body>
 </html>

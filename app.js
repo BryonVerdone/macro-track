@@ -1,15 +1,21 @@
-const proteinInput = document.getElementById('protein');
-const carbInput = document.getElementById('carb');
-const fatInput = document.getElementById('fat');
-const caloriesDisplay = document.querySelector('.calories-display');
-const btn = document.getElementById('btn');
+let proteinGoal = 0;
+let carbsGoal = 0;
+let fatsGoal = 0;
 
-btn.addEventListener('click', function () {
-  const protein = proteinInput.value * 4;
-  const carb = carbInput.value * 4;
-  const fat = fatInput.value * 9;
-  console.log(protein, carb, fat);
-  const totalCalories = protein + carb + fat;
-  console.log(totalCalories);
-  caloriesDisplay.textContent = `Your total calories for the day are ${totalCalories} calories. `;
+const goalsForm = document.getElementById('goalsForm');
+const foodForm = document.getElementById('foodForm');
+const foodList = document.getElementById('foodList');
+
+goalsForm.addEventListener('submit', function (e) {
+  e.preventDefault();
+  console.log('form submitted');
+  proteinGoal = parseFloat(document.getElementById('proteinInput').value);
+  carbsGoal = parseFloat(document.getElementById('carbsInput').value);
+  fatsGoal = parseFloat(document.getElementById('fatsInput').value);
+  console.log(proteinGoal, carbsGoal, fatsGoal);
+  calculateCalories();
 });
+function calculateCalories() {
+  const totalCalories = proteinGoal * 4 + carbsGoal * 4 + fatsGoal * 9;
+  document.getElementById('totalCalories').textContent = totalCalories;
+}
