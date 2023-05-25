@@ -5,16 +5,17 @@ let fatsGoal = 0;
 const goalsForm = document.getElementById('goalsForm');
 const foodForm = document.getElementById('foodForm');
 const foodList = document.getElementById('foodList');
-const btn = document.getElementById('btn');
+// const btn = document.getElementById('btn');
 
 goalsForm.addEventListener('submit', function (e) {
   e.preventDefault();
-  console.log('form submitted');
+
   proteinGoal = parseFloat(document.getElementById('proteinInput').value);
   carbsGoal = parseFloat(document.getElementById('carbsInput').value);
   fatsGoal = parseFloat(document.getElementById('fatsInput').value);
-  console.log(proteinGoal, carbsGoal, fatsGoal);
+
   let proteinDisplay = document.getElementById('proteinDisplay');
+
   proteinDisplay.innerHTML = proteinGoal;
   let carbsDisplay = document.getElementById('carbsDisplay');
   carbsDisplay.innerHTML = carbsGoal;
@@ -52,13 +53,18 @@ foodForm.addEventListener('submit', function (e) {
 
   console.log(foodItem);
   addFoodItem(foodItem);
-  // foodForm.reset();
+  foodForm.reset();
   calculateCalories();
+  // return false;
 });
 
 function addFoodItem(foodItem) {
   const foodItemElement = document.createElement('li');
-  foodItemElement.textContent = `${foodItem.name}: ${foodItem.protein}g Protein, $
-  {foodItem.carbs}g Carbs, ${foodItem.fats}g Fats`;
+  foodItemElement.textContent = `${foodItem.name}: ${foodItem.protein}g Protein, ${foodItem.carbs}g Carbs, ${foodItem.fats}g Fats`;
+  foodList.appendChild(foodItemElement);
+}
+function addFoodItem(foodItem) {
+  const foodItemElement = document.createElement('li');
+  foodItemElement.textContent = `${foodItem.name}: ${foodItem.protein}g Protein, ${foodItem.carbs}g Carbs, ${foodItem.fats}g Fats`;
   foodList.appendChild(foodItemElement);
 }
